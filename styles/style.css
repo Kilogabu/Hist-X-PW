@@ -1,0 +1,689 @@
+:root {
+    color-scheme: light;
+
+    --page: #f6f6f7;
+    --superficie: #ffffff;
+    --sorvete: #f2f8ff;
+    --sorvete-alt: #f6faffea;
+    --superficie-soft: #eceffa;
+    --superficie-strong: #e2e2f2;
+    --negrito: #282331;
+    --texto: #514b5b;
+    --texto-muted: #777181;
+    --line: #e1ebe4;
+    --nirple: #0d7223cc;
+    --blue: #2f38af;
+    --blue-deep: #151363;
+    --blue-mid: #2f39ca;
+    --blue-pale: #f2f4f9;
+    --blue-wash: #e8f4f5;
+    --light-blue: #398fff;
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --page: #0D1117;
+    --superficie: #121D2F; 
+    --sorvete: #041d3a7c;
+    --sorvete-alt: #052146a9;
+    --superficie-soft: #121A3D;
+    --superficie-strong: #e2e2f2;
+    --negrito: #f3eff8;
+    --texto: #ddd8e4;
+    --texto-muted: #a9a1b4;
+    --line: #214981;
+    --nirple: #0d7223cc;
+    --blue: #398fff;
+    --blue-deep: #151363;
+    --blue-mid: #2f39ca;
+    --blue-pale: #141e36;
+    --blue-wash: #e8f4f5;
+    --light-blue: #67a8fd;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('./fonts/jetbrains-mono-var-latin.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Fontes: 
+font-family: "Trebuchet MS", Arial, sans-serif; 
+font-family: "Segoe UI", Arial, sans-serif; 
+font-family: 'Plus Jakarta Sans';
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; 
+    -webkit-font-smoothing: antialiased;
+}
+
+body {      
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--page);
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
+    color: var(--texto);
+    font-size: 17px;
+    font-family: 'Plus Jakarta Sans';
+    line-height: 1.5em;
+    margin: 2vh 0;
+}
+
+h1{
+    color: var(--negrito);
+}
+
+h2{
+    color: var(--negrito);
+    font-size: 30px;
+    font-family: "Trebuchet MS", Arial, sans-serif; 
+    transition: font-size 0.35s;
+    cursor:default;
+}
+
+h2:hover{
+    font-size: 31px;
+}
+
+h3{
+    color: var(--blue);
+    font-size: 16px;
+    
+    cursor: default;
+    
+}
+
+img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* -------------------------- cabeçalho ------------------------- */
+
+header{
+    position: sticky;
+    z-index: 50;
+    top: 0;
+    border-bottom: 1px solid var(--line);
+    background-color: var(--superficie);
+}
+
+.header-inner{
+    width: min(1320px, calc(100% - 64px));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 76px;
+    margin: 0 auto;
+    gap: 28px;
+}
+
+.header-title a{
+    font-family: "Trebuchet MS", Arial, sans-serif; 
+}
+
+.header-title h2{
+    transition: color 0.2s, font-size 0.2s;
+    cursor: pointer;
+
+}
+
+.header-title h2:hover{
+    color: var(--blue);
+    font-size: 31px;
+}
+
+.main-nav{
+    width: 500px;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    color: var(--texto);
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s;
+    
+}
+
+.nav-links:hover{
+    color: var(--light-blue);
+}
+
+.header-actions{
+    display: flex;
+    gap: 40px;
+}
+
+.quiz-nav-button{
+    background-color: var(--blue);
+    border-radius: 9px;
+    color: #f5f5f5;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 13px;
+    transition: background 0.2s;
+}
+
+.quiz-nav-button:hover{
+    background-color: var(--blue-mid);
+}
+
+.theme-toggle{
+    display: flex;
+    min-height: 40px;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 11px;
+    border: 2px solid var(--line);
+    border-radius: 8px;
+    background: var(--superficie);
+    cursor: pointer;
+    color: var(--negrito-soft);
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.theme-toggle:hover{
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+
+
+/* -------------------------------- centro da tela -------------------------------- */
+
+main{
+    padding: 3rem 0;
+
+}
+
+section{
+    width: min(1300px, calc(100% - 64px));
+    margin-inline: auto;
+    margin: 3vh auto;
+    scroll-margin-top: 100px;
+}
+
+.titulo{
+    font-size: 52px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    transition: font-size 0.35s;
+}
+
+.titulo:hover{
+    font-size: 53px;
+    cursor: default
+}
+
+.introducao{
+    display: flex;
+    align-items: center;
+    gap: 7vw;
+}
+
+
+.introducao-title{
+    color: var(--blue);
+}
+
+
+.introducao-content{
+    max-width: 620px;
+}
+
+.periodo{
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    align-items: center;
+    cursor: default;
+}
+
+.periodo p{
+    transition: color 0.2s;
+}
+
+.periodo p:hover{
+    color: var(--negrito);
+}
+
+.periodo-clock{
+    border: 1px solid var(--blue);
+    border-radius: 8px;
+    padding: 4px 8px;
+    color: var(--blue);
+    font-weight: 100;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.periodo-clock:hover{
+    color: var(--light-blue);
+    border-color: var(--light-blue);
+}
+
+.introducao-img{
+    min-height: 405px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+.separador{
+    background-color: var(--superficie-soft);
+    
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+
+.card-cluster{
+    background-color: var(--superficie-soft);
+    padding: 3vh;
+}
+
+.card{
+    margin: 5vh auto;
+    background-color: var(--superficie);
+    padding: 5vh;
+    border-radius: 10px;
+    border: 1px solid var(--blue-pale);
+    display: flex;
+    align-items: center;
+    gap: 4vw;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px 0 rgba(0,0,0,0.1);
+}
+
+.card-img{
+    min-height: 290px;
+}
+
+.card-alt{
+    margin: 5vh auto;
+    background-color: var(--superficie);
+    padding: 5vh;
+    border-radius: 10px;
+    border: 1px solid var(--blue-pale);
+    display: flex;
+    align-items: center;
+    gap: 4vw;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-alt:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px 0 rgba(0,0,0,0.1);
+
+}
+
+.info-cluster{ 
+    background-color: var(--superficie-soft);
+    padding: 3vh;
+}
+
+.info-div{
+    padding: 3vw 2vw;
+    border-bottom: 1px solid var(--line);
+    border-top: 1px solid var(--line);
+    margin: 5vh auto;
+    transition: box-shadow 0.3s, background 0.3s;
+    border-radius: 10px;
+}
+
+.info-div:hover{
+    background-color: var(--sorvete);
+    box-shadow: 0 4px 15px  rgba(26, 25, 25, 0.05);
+}
+
+.info-div-alt{
+    padding: 3vw 2vw;
+    border-bottom: 1px solid var(--line);
+    border-top: 1px solid var(--line);
+    margin: 5vh auto;
+    transition: box-shadow 0.3s, background 0.3s;
+    border-radius: 10px;
+}
+
+.info-div-alt:hover{
+    background-color: var(--sorvete-alt);
+    box-shadow: 0 4px 15px  rgba(26, 25, 25, 0.05);
+}
+
+.info-mini{
+    background-color: var(--superficie-soft);
+    padding: 1vw;
+    width: 50%;
+    justify-self: center;
+    border: 2px solid var(--blue-pale);
+}
+
+.info-mini h2{
+    font-size: 24px;
+}
+
+.reis{
+    border-bottom: 1px  solid var(--line);
+    border-top: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    margin-bottom: 2vh;
+}
+
+.reis h2{
+    font-size: 22px;
+    margin-top: 2vh;
+}
+
+.numero-romano{
+    background-color: var(--nirple);
+    border-radius: 10px;
+    display: flex;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+}
+
+.numero-romano h3{
+    color: var(--blue-pale);
+    font-family: "JetBrains Mono", monospace;
+    width: 44px;
+    text-align: center;
+    
+}
+
+.fim-img{
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 800px; 
+    object-fit: cover;
+    justify-self: center;
+    margin-top: 4vh;
+}
+
+.footer-to-quiz{
+    background-color: var(--superficie-soft);
+    padding: 0.4rem 0;
+}
+
+.to-quiz{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer-btn{
+    height: 40px;
+}
+
+footer{
+    background-color: var(--blue-deep);
+
+}
+.footer-creditos{
+    margin-bottom: 0px;
+    padding-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-creditos a{
+    color: var(--line);
+}
+
+
+
+
+
+/* ----------  tablets eu acho ---------- */
+@media (max-width: 768px) {
+    
+    section {
+        width: calc(100% - 32px);   /* sobrescreve min(1320px, 100% - 64px) finalmente socorro Deus*/
+    }
+
+    main {
+        padding: 1.5rem 0;
+    }
+
+    /* ----- cabeçalho ----- */
+    
+    .header-inner {
+        width: calc(100% - 32px);   
+        flex-wrap: wrap;
+        min-height: 0;
+        padding: 10px 0;
+        gap: 8px 16px;
+    }
+
+    .header-title {
+        flex: 1 1 auto;
+    }
+
+    
+    .header-title h2, .header-title h2:hover {
+        font-size: 22px;
+    }
+
+    .header-actions {
+        gap: 10px;
+    }
+
+    .quiz-nav-button {
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .theme-toggle {
+        min-height: 36px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+    /* eureka */
+    .main-nav {
+        order: 3;
+        width: 100%;
+        gap: 22px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+    }
+
+    .main-nav::-webkit-scrollbar {
+        display: none;                   
+    }
+    /* cabou a eureka */
+
+    .nav-links {
+        flex-shrink: 0;
+    }
+
+    section {
+        scroll-margin-top: 130px;
+    }
+
+
+    
+    .titulo, .titulo:hover {
+        font-size: 38px;
+    }
+
+    h2, h2:hover {
+        font-size: 28px;
+    }
+
+    
+    .introducao {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .introducao-content {
+        max-width: 100%;
+    }
+
+    
+    .introducao-img {
+        min-height: 0;
+        width: 100%;
+        max-width: 380px;
+        justify-content: center;
+    }
+
+    /* ---------- centro da tela ---------------- */
+    .card-cluster{
+        padding: 12px;
+    }
+
+    .info-cluster {
+        padding: 12px;
+    }
+
+    .card, .card-alt {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        padding: 20px;
+        margin: 3vh auto;
+    }
+
+    
+    .card-img {
+        min-height: 0;
+        width: 100%;
+    }
+
+
+    .info-div, .info-div-alt {
+        padding: 20px 16px;
+        margin: 3vh auto;
+    }
+
+    .info-mini {
+        width: 100%;
+        padding: 16px;
+        margin-top: 16px;
+    }
+
+    .info-mini h2, .info-mini h2:hover {
+        font-size: 22px;
+    }
+
+    .reis {
+        gap: 16px;
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+
+    .reis h2, .reis h2:hover {
+        font-size: 20px;
+        margin-top: 0;
+    }
+
+    .numero-romano {
+        flex-shrink: 0;
+        width: 44px;
+    }
+
+
+    .fim-img {
+        width: 100%;
+        margin-top: 16px;
+    }
+
+    /* ------------- footer ----------- */
+
+    .to-quiz {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    #footer-btn {
+        width: 100%;
+    }
+}
+
+
+/* ---------------- celular ----------- */
+@media (max-width: 480px) {
+
+    
+    p {
+        font-size: 16px;
+    }
+
+    .titulo,
+    .titulo:hover {
+        font-size: 32px;
+    }
+
+    h2,
+    h2:hover {
+        font-size: 24px;
+    }
+
+    .header-title h2,
+    .header-title h2:hover {
+        font-size: 19px;
+    }
+
+    .header-actions .quiz-nav-button {
+        display: none;
+    }
+
+    .card, .card-alt {
+        padding: 16px;
+    }
+
+    .info-div, .info-div-alt {
+        padding: 16px 12px;
+    }
+
+    .info-mini h2, .info-mini h2:hover {
+        font-size: 20px;
+    }
+
+    .reis h2, .reis h2:hover {
+        font-size: 18px;
+    }
+
+    .periodo {
+        margin-top: 20px;
+    }
+}
