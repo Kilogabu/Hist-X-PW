@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Teste seus conhecimentos sobre a Monarquia Romana com um quiz de perguntas e pontuação.">
-    <meta name="theme-color" content="#5b4388">
+    <meta name="description" content="Teste seus conhecimentos sobre a Monarquia Romana com um quiz de perguntas e pontuação.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="jetbrains-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <title>Quiz Monarquia Romana</title>
     <link rel="stylesheet" href="styles/quiz.css">
     <script src="script.js" defer></script>
@@ -14,14 +15,10 @@
 </head>
 
 <body class="quiz-page">
-    <a class="skip-link" href="#quiz-main">Pular para o quiz</a>
 
     <header>
         <div class="header-inner">
-            <a class="brand" href="index.html" aria-label="Voltar para Monarquia Romana">
-                
-                <span>Monarquia Romana</span>
-            </a>
+            <a class="header-title" href="index.html" aria-label="Voltar para Monarquia Romana"><h2>Monarquia Romana</h2></a>
             
             <div class="main-nav">
                 <section class="quiz-dashboard" aria-label="Progresso do quiz">
@@ -35,7 +32,10 @@
             </div>
 
             <div class="header-actions">
-                <a class="back-link" href="index.html">Voltar ao resumo</a>
+                <a class="back-link" href="index.html">
+                    <i class="fa-solid fa-angles-left"></i>
+                    Voltar ao resumo
+                </a>
                 <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ativar modo escuro" aria-pressed="false">
                     <span class="theme-label">Modo escuro</span>
                 </button>
@@ -55,6 +55,18 @@
 
         
     </main>
+
+    <footer>
+        <div class="creditos">
+            <section class="footer-creditos">
+                <h2>Créditos:</h2>
+                <a href="https://github.com/Kilogabu" class="footer-links">Github Felipe</a>
+                <a href="https://github.com/Boldrin86" class="footer-links">Github Boldrin</a>
+                <a href="https://github.com/guimaraes88" class="footer-links">Github Guimarães</a>
+                <a href="https://github.com/ACruz2512" class="footer-links">Github André</a>
+            </section>
+        </div>
+    </footer>
 
 </body>
 

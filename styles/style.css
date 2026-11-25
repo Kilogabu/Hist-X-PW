@@ -13,7 +13,7 @@
     --line: #e1ebe4;
     --nirple: #0d7223cc;
     --blue: #2f38af;
-    --blue-deep: #151363;
+    --blue-deep: #041b59;
     --blue-mid: #2f39ca;
     --blue-pale: #f2f4f9;
     --blue-wash: #e8f4f5;
@@ -35,7 +35,7 @@
     --line: #214981;
     --nirple: #0d7223cc;
     --blue: #398fff;
-    --blue-deep: #151363;
+    --blue-deep: #070625;
     --blue-mid: #2f39ca;
     --blue-pale: #141e36;
     --blue-wash: #e8f4f5;
@@ -293,6 +293,7 @@ section{
     border-radius: 10px;
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 
 
@@ -328,6 +329,8 @@ section{
 
 .card-img{
     min-height: 290px;
+    min-width: 290px;
+    text-align: center;
 }
 
 .card-alt{
@@ -408,7 +411,7 @@ section{
 }
 
 .numero-romano{
-    background-color: var(--nirple);
+    background-color: var(--light-blue);
     border-radius: 10px;
     display: flex;
     height: 44px;
@@ -437,6 +440,7 @@ section{
 .footer-to-quiz{
     background-color: var(--superficie-soft);
     padding: 0.4rem 0;
+    border-bottom: 2px solid var(--light-blue);
 }
 
 .to-quiz{
@@ -462,7 +466,17 @@ footer{
 }
 
 .footer-creditos a{
-    color: var(--line);
+    color: var(--light-blue);
+}
+
+.footer-creditos a:hover{
+    text-decoration: underline;
+}
+
+.footer-creditos h2{
+    color: #eceaea;
+    font-size: 24px;
+    margin-bottom: 6px;
 }
 
 
