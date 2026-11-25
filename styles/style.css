@@ -17,7 +17,7 @@
     --blue-mid: #2f39ca;
     --blue-pale: #f2f4f9;
     --blue-wash: #e8f4f5;
-    --light-blue: #398fff;
+    --light-blue: #398ffe;
 }
 
 :root[data-theme="dark"] {
